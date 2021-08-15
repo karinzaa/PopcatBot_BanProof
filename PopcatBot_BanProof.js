@@ -4,7 +4,9 @@
 3) เอา code ใส่แล้ว enter
 4) ดูความคืนหน้าได้ใน console
 
-popcat.click จะรับแค่ 800 pops ทุกๆ 30วิ ต่อ 1 IP และถ้าส่งเกินแบบนี้10ครั้งจะโดนโดนตีตราว่าใช้ bot ต้อง clear cookie
+Note: popcat.click จะรับแค่ 800 pops ทุกๆ 30วิ ต่อ 1 IP และถ้าส่งเกินแบบนี้10ครั้งจะโดนโดนตีตราว่าใช้ bot ต้อง clear cookie
+
+This code insapinem from Noxturnix/legit-auto-pop.js
 */
 
 console.clear()
@@ -42,13 +44,11 @@ function legitClearCookie(cookieName) {
     cookie.name.concat("=").concat(cookie.propertyString)
   );
   let cookieString = cookieStringArray.join("; ");
-
   document.cookie = cookieString;
 }
 
 function legitResetSequentialMaxPops() {
   let vueElement = document.getElementById("app").__vue__;
-
   vueElement.sequential_max_pops = 0;
 }
 
@@ -56,9 +56,9 @@ function legitMassPopProcess(popCount, cookieName) {
   legitClearCookie(cookieName);
   legitResetSequentialMaxPops();
   legitMassPop(popCount);
-   total += 800;
-    console.log(`[${new Date().toLocaleTimeString()}] %c🐱: ✅ส่ง 800 pops ส่งสำเร็จ (📶จำนวน pops ที่ส่งไปแล้ว: ${total})`, "background: #050; color: #0f0");
-    return;
+    total += 800;
+    console.log(`[${new Date().toLocaleTimeString()}] %c🐱: ✅ส่ง 800 pops ส่งสำเร็จ (🚀จำนวน pops ที่ส่งไปแล้ว: ${total})`, "background: #050; color: #0f0");
+  return;
 }
 
 function legitStartAutomation(popCount, interval = 30e3, cookieName = "bot") {
@@ -68,4 +68,3 @@ function legitStartAutomation(popCount, interval = 30e3, cookieName = "bot") {
   }, interval);
 }
 legitStartAutomation(800);
-
