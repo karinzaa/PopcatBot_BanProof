@@ -6,7 +6,7 @@
 
 Note: popcat.click จะรับแค่ 800 pops ทุกๆ 30วิ ต่อ 1 IP และถ้าส่งเกินแบบนี้10ครั้งจะโดนโดนตีตราว่าใช้ bot ต้อง clear cookie
 
-This code insapinem from Noxturnix/legit-auto-pop.js
+This code inspired from Noxturnix/legit-auto-pop.js
 */
 
 console.clear()
