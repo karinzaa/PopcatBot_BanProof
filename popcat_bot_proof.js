@@ -1,19 +1,30 @@
+/*
+1) เปิด https://popcat.click
+2) เปิด console (F12 or CTRL+SHIFT+I)
+3) เอา code ใส่แล้ว enter
+4) ดูความคืนหน้าได้ใน console
+
+popcat.click จะรับแค่ 800 pops ทุกๆ 30วิ ต่อ 1 IP และถ้าส่งเกินแบบนี้10ครั้งจะโดนโดนตีตราว่าใช้ bot ต้อง clear cookie
+*/
+
 console.clear()
 let keyDownEvent = new KeyboardEvent("keydown", { key: "-" });
 let keyUpEvent = new KeyboardEvent("keyup", { key: "-" });
-console.log("%c Bot เริ่มทำงานแล้ว ระบบจะส่ง 800 pops ทุกๆ 30วิ ", "background: #050; color: #0f0");
+console.log("%c🐱:popcat.click จะรับแค่ 800 pops ทุกๆ 30วิ ต่อ 1 IP และถ้าส่งเกินแบบนี้10ครั้งจะโดนโดนตีตราว่าใช้ bot ต้อง clear cookie", "background: #050; color: #0f0");
+console.log("%c🐱: Bot เริ่มทำงานแล้ว ระบบจะส่ง 800 pops ทุกๆ 30วิ ", "background: #050; color: #0f0");
 function legitPop() {
   document.dispatchEvent(keyDownEvent);
   document.dispatchEvent(keyUpEvent);
 }
 
-async function legitMassPop(pop_count) {
-  for (let i = 0; i < pop_count; i++) {
+async function legitMassPop(popCount) {
+  for (let i = 0; i < popCount; i++) {
     legitPop();
   }
 }
 
-function legitClearCookie(cookie_name) {
+
+function legitClearCookie(cookieName) {
   let cookies = document.cookie.split(";").map((cookieString) => {
     let cookieArray = cookieString.trim().split("=");
     return {
@@ -24,7 +35,7 @@ function legitClearCookie(cookie_name) {
 
   let filteredCookies = cookies.filter(
     (cookie) =>
-      cookie.propertyString && cookie.name.toLowerCase() !== cookie_name
+      cookie.propertyString && cookie.name.toLowerCase() !== cookieName
   );
   let cookieStringArray = filteredCookies.map((cookie) =>
     cookie.name.concat("=").concat(cookie.propertyString)
@@ -40,19 +51,19 @@ function legitResetSequentialMaxPops() {
   vueElement.sequential_max_pops = 0;
 }
 
-function legitMassPopProcess(pop_count, cookie_name) {
-  legitClearCookie(cookie_name);
+function legitMassPopProcess(popCount, cookieName) {
+  legitClearCookie(cookieName);
   legitResetSequentialMaxPops();
-  legitMassPop(pop_count);
-    console.log(`[${new Date().toLocaleTimeString()}] %cคุณได้ส่ง 800 pops ส่งสำเร็จ`, "background: #050; color: #0f0");
+  legitMassPop(popCount);
+    console.log(`[${new Date().toLocaleTimeString()}] %c🐱: คุณได้ส่ง 800 pops ส่งสำเร็จ`, "background: #050; color: #0f0");
     return;
 }
 
-function legitStartAutomation(pop_count, interval = 30e3, cookie_name = "bot") {
-  legitMassPopProcess(pop_count, cookie_name);
+function legitStartAutomation(popCount, interval = 30e3, cookieName = "bot") {
+  legitMassPopProcess(popCount, cookieName);
   setInterval(() => {
-    legitMassPopProcess(pop_count, cookie_name);
+    legitMassPopProcess(popCount, cookieName);
   }, interval);
 }
-
 legitStartAutomation(800);
+
