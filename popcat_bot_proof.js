@@ -1,6 +1,6 @@
 console.clear()
-let keyDownEvent = new KeyboardEvent("keydown", { key: "space" });
-let keyUpEvent = new KeyboardEvent("keyup", { key: "space" });
+let keyDownEvent = new KeyboardEvent("keydown", { key: "-" });
+let keyUpEvent = new KeyboardEvent("keyup", { key: "-" });
 console.log("%c Bot เริ่มทำงานแล้ว ระบบจะส่ง 800 pops ทุกๆ 30วิ ", "background: #050; color: #0f0");
 function legitPop() {
   document.dispatchEvent(keyDownEvent);
