@@ -11,8 +11,8 @@ console.clear()
 let keyDownEvent = new KeyboardEvent("keydown", { key: "-" });
 let keyUpEvent = new KeyboardEvent("keyup", { key: "-" });
 var total = 0;
-console.log("%c🐱:popcat.click จะรับแค่ 800 pops ทุกๆ 30วิ ต่อ 1 IP และถ้าส่งเกินแบบนี้10ครั้งจะโดนโดนตีตราว่าใช้ bot ต้อง clear cookie", "background: #050; color: #0f0");
-console.log("%c🐱: Bot เริ่มทำงานแล้ว ระบบจะส่ง 800 pops ทุกๆ 30วิ ", "background: #050; color: #0f0");
+console.log("%c🐱:💬popcat.click จะรับแค่ 800 pops ทุกๆ 30วิ ต่อ 1 IP และถ้าส่งเกินแบบนี้10ครั้งจะโดนโดนตีตราว่าใช้ bot ต้อง clear cookie", "background: #050; color: #0f0");
+console.log("%c🐱:🔄Bot เริ่มทำงานแล้ว ระบบจะส่ง 800 pops ทุกๆ 30วิ ", "background: #050; color: #0f0");
 function legitPop() {
   document.dispatchEvent(keyDownEvent);
   document.dispatchEvent(keyUpEvent);
@@ -57,7 +57,7 @@ function legitMassPopProcess(popCount, cookieName) {
   legitResetSequentialMaxPops();
   legitMassPop(popCount);
    total += 800;
-    console.log(`[${new Date().toLocaleTimeString()}] %c🐱: คุณได้ส่ง 800 pops ส่งสำเร็จ (จำนวน pops ที่ส่งไปแล้ว: ${total})`, "background: #050; color: #0f0");
+    console.log(`[${new Date().toLocaleTimeString()}] %c🐱: ✅ส่ง 800 pops ส่งสำเร็จ (📶จำนวน pops ที่ส่งไปแล้ว: ${total})`, "background: #050; color: #0f0");
     return;
 }
 
